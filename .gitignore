@@ -1,0 +1,13 @@
+.DS_Store
+build
+__pycache__
+.ipynb_checkpoints/
+.git
+*.egg-info
+output/*
+data/custom/__MACOSX
+nohup.out
+*.jpg
+*.png
+*.jpeg
+*.ipynb
