@@ -9,7 +9,6 @@ class ListDataSet(Dataset):
         self.phrase=phrase
         with open(image_path,"r") as f:
             self.imgs = f.readlines()
-        if phrase!="test":
             self.labels=[int(re.search("/\d/",path).group()[1]) for path in self.imgs]
         self.transforms=transforms
         
@@ -22,11 +21,8 @@ class ListDataSet(Dataset):
         else:
             pil_img = np.asarray(pil_img)
             data = torch.from_numpy(pil_img)
-        if self.phrase!="test":
-            label=self.labels[index]
-            sample = (data,label)
-        else:
-            sample=data
+        label=self.labels[index]
+        sample = (data,label)
         return sample
     def __len__(self):
         return len(self.imgs)
