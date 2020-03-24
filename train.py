@@ -2,7 +2,7 @@ import copy
 import time
 import torch
 import argparse
-from models import *
+from models.models import *
 from torch.utils.data import DataLoader
 from utils.load_data import ListDataSet
 from utils.transforms import *
